@@ -41,3 +41,18 @@ h2 {
 .second-header {
     max-width: 700px;
 }
+
+footer {
+  background: #0080eb;
+  margin-top: 30px;
+}
+
+.footer-copyright {
+  background: #0027ff;
+  color: white;
+  font-size: smaller;
+}
+
+.social-media-icon {
+  color: white;
+}
