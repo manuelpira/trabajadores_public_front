@@ -1,0 +1,43 @@
+thead th {
+  background: #0080eb;
+  color: white; 
+  border-top: 0px !important;
+}
+
+thead th:first-of-type {
+  border-top-left-radius: 10px; 
+}
+
+thead th:last-of-type{
+  border-top-right-radius: 10px; 
+}
+
+.cell-number {
+  text-align: right;
+}
+
+.form-group.required .control-label:after {
+  content:" *";
+  color:red;
+}
+
+.jumbotron {
+  background-color: #0080eb !important;
+  color: white;
+  padding: 2rem 1rem;
+  border-radius: 0px !important;
+}
+
+legend {
+  font-weight: bold;
+  color: #0080eb !important;
+}
+
+h2 {
+  font-weight: bold !important;
+  color: #0080eb !important;
+}
+
+.second-header {
+    max-width: 700px;
+}
