@@ -27,146 +27,183 @@
     <title>Cuenta Corriente</title>
   </head>
 
-  <body style="margin:10px;padding:30px">
-    <div class="container header">    
-      <p>
-        <div class="row">
-          <div class="col-sm-6">
-            <img src="https://adherentes.agc.org.ar/logos/agc.png" alt="AGC" width="188"/>
+  <body>
+    <div class="content">
+      <div class="container header">    
+        <p>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="https://adherentes.agc.org.ar/logos/agc.png" alt="AGC" width="188"/>
+            </div>
+            <div class="col-sm-6">
+              <img style="float: right;" src="https://adherentes.agc.org.ar/logos/ti.png" alt="Trabajadores Informáticos" width="192"/>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <img style="float: right;" src="https://adherentes.agc.org.ar/logos/ti.png" alt="Trabajadores Informáticos" width="192"/>
-          </div>
-        </div>
-      </p>
-    </div>
-    <div class="container">
-        <br>
-        <b>{{trabajador.nombres}} {{trabajador.apellidos}}</b>
-        <br>
-        <br>
-    </div>
-
-    <div class="container">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="cuenta-tab" data-toggle="tab" href="#cuenta" role="tab" aria-controls="cuenta" aria-selected="true">Estado de Cuenta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pagos-tab" data-toggle="tab" href="#pagos" role="tab" aria-controls="pagos" aria-selected="false">Informe de Pagos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="ayuda-tab" data-toggle="tab" href="#ayuda" role="tab" aria-controls="ayuda" aria-selected="false">Ayuda</a>
-        </li>
-      </ul>
-
-      <div class="tab-content" id="myTabContent">
-        <!-- TAB DE CUENTA CORRIENTE -->    
-        <div class="tab-pane fade show active " id="cuenta" role="tabpanel" aria-labelledby="cuenta-tab">   
-          <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Fecha</th>
-                    <th>Concepto</th>
-                    <th class="cell-number">Debe</th>
-                    <th class="cell-number">Haber</th>
-                    <th class="cell-number">Saldo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#movs}}
-                  <tr>
-                    <td>{{fec_mov}}</td>
-                    <td>{{concepto}}</td>
-                    <td class="cell-number">{{debe}}</td>
-                    <td class="cell-number">{{haber}}</td>
-                    <td class="cell-number">{{saldo}}</td>
-                  </tr>
-
-                  {{/movs}}
-                </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- TAB DE INFORME DE PAGOS -->
-        <div class="tab-pane fade" id="pagos" role="tabpanel" aria-labelledby="pagos-tab">
-
+        </p>
+      </div>
+      <div class="container">
           <br>
+          <b>{{trabajador.nombres}} {{trabajador.apellidos}}</b>
+          <br>
+          <br>
+      </div>
+      <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="cuenta-tab" data-toggle="tab" href="#cuenta" role="tab" aria-controls="cuenta" aria-selected="true">Estado de Cuenta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pagos-tab" data-toggle="tab" href="#pagos" role="tab" aria-controls="pagos" aria-selected="false">Informe de Pagos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="ayuda-tab" data-toggle="tab" href="#ayuda" role="tab" aria-controls="ayuda" aria-selected="false">Ayuda</a>
+          </li>
+        </ul>
 
-          <p>Luego de realizar un pago, informalo a la AGC. El importe será acreditado en tu cuenta corriente luego de su verificación contable.</p>
+        <div class="tab-content" id="myTabContent">
+          <!-- TAB DE CUENTA CORRIENTE -->    
+          <div class="tab-pane fade show active " id="cuenta" role="tabpanel" aria-labelledby="cuenta-tab">   
+            <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Concepto</th>
+                      <th class="cell-number">Debe</th>
+                      <th class="cell-number">Haber</th>
+                      <th class="cell-number">Saldo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#movs}}
+                    <tr>
+                      <td>{{fec_mov}}</td>
+                      <td>{{concepto}}</td>
+                      <td class="cell-number">{{debe}}</td>
+                      <td class="cell-number">{{haber}}</td>
+                      <td class="cell-number">{{saldo}}</td>
+                    </tr>
 
-          <form id="form">
-            <div class="row">
-              <div class="form-group required col-lg-4">
-                <label class="control-label" for="periodo_pago">Período abonado</label>
-                <input type="text" class="form-control" name="periodo_pago" id="periodo_pago" placeholder="mm/yyyy" required>
-              </div>
-              <div class="form-group required col-lg-4">
-                <label class="control-label" for="ingresos">Monto bruto percibido en dicho período</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                  </div>
-                  <input type="number" class="form-control" name="ingresos" id="ingresos" placeholder="0.00" required/>
-                </div>
-              </div>
+                    {{/movs}}
+                  </tbody>
+              </table>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="form-group required col-lg-4">
-                <label class="control-label" for="importe_pago">Importe abonado</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">$</span>
-                  </div>
-                  <input class="form-control" id="importe_pago" type="text" placeholder="0.00" required>
-                </div>
-              </div>
+          <!-- TAB DE INFORME DE PAGOS -->
+          <div class="tab-pane fade" id="pagos" role="tabpanel" aria-labelledby="pagos-tab">
 
-              <div class="form-group required col-lg-4">
-                <label class="control-label" for="archivo_imagen">Comprobante de pago.</label>
-                <input type="file" class="form-control-file" id="archivo_imagen" required>
-                <small id="archivoHelp" class="form-text text-muted">Archivo de imagen o PDF de tu transferencia. Máximo 5mb.</small>
-
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="form-group col-lg-8">
-                <label class="control-label" for="comentarios">Comentarios</label>
-                <textarea class="form-control" id="comentarios" rows="3"></textarea>
-              </div>
-            </div>
-
-            <input type="hidden" id="id" name="id" value={{trabajador.id}}>
-
-            <div class="form-group">
-              <div id="btn_post" class="btn btn-primary">Informar pago</div>
-            </div>
-          </form>
-        </div>
-
-        <!-- TAB DE AYUDA -->
-        <div class="tab-pane fade" id="ayuda" role="tabpanel" aria-labelledby="ayuda-tab">
-          <p>
             <br>
-            Si tenes alguna consulta, no dudes en contactarte con nosotros:            
-          </p>
-          
-          <ul>
-            <li>Whatsapp: <a href="https://api.whatsapp.com/send?phone=541160914660"><strong>+54 11 6091 4660</strong></a>
-            </li>
-            <li>E-mail: <a href="mailto:empleadores.soporte@agc.org.ar"><strong>empleadores.soporte@agc.org.ar</strong></a>
-            </li>
-          </ul>
+
+            <p>Luego de realizar un pago, informalo a la AGC. El importe será acreditado en tu cuenta corriente luego de su verificación contable.</p>
+
+            <form id="form">
+              <div class="row">
+                <div class="form-group required col-lg-4">
+                  <label class="control-label" for="periodo_pago">Período abonado</label>
+                  <input type="text" class="form-control" name="periodo_pago" id="periodo_pago" placeholder="mm/yyyy" required>
+                </div>
+                <div class="form-group required col-lg-4">
+                  <label class="control-label" for="ingresos">Monto bruto percibido en dicho período</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control" name="ingresos" id="ingresos" placeholder="0.00" required/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group required col-lg-4">
+                  <label class="control-label" for="importe_pago">Importe abonado</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input class="form-control" id="importe_pago" type="text" placeholder="0.00" required>
+                  </div>
+                </div>
+
+                <div class="form-group required col-lg-4">
+                  <label class="control-label" for="archivo_imagen">Comprobante de pago.</label>
+                  <input type="file" class="form-control-file" id="archivo_imagen" required>
+                  <small id="archivoHelp" class="form-text text-muted">Archivo de imagen o PDF de tu transferencia. Máximo 5mb.</small>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-lg-8">
+                  <label class="control-label" for="comentarios">Comentarios</label>
+                  <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                </div>
+              </div>
+
+              <input type="hidden" id="id" name="id" value={{trabajador.id}}>
+
+              <div class="form-group">
+                <div id="btn_post" class="btn btn-primary">Informar pago</div>
+              </div>
+            </form>
+          </div>
+
+          <!-- TAB DE AYUDA -->
+          <div class="tab-pane fade" id="ayuda" role="tabpanel" aria-labelledby="ayuda-tab">
+            <p>
+              <br>
+              Si tenes alguna consulta, no dudes en contactarte con nosotros:            
+            </p>
+            
+            <ul>
+              <li>Whatsapp: <a href="https://api.whatsapp.com/send?phone=541160914660"><strong>+54 11 6091 4660</strong></a>
+              </li>
+              <li>E-mail: <a href="mailto:empleadores.soporte@agc.org.ar"><strong>empleadores.soporte@agc.org.ar</strong></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+    <footer class="page-footer font-small cyan darken-3">
+      <script src="https://kit.fontawesome.com/cc7af5fc79.js" crossorigin="anonymous"></script>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 py-5">
+            <div class="d-flex justify-content-center">
+              <!-- Facebook -->
+              <a class="social-media-icon" target="_blank" href="https://www.facebook.com/agc.argentina">
+                <i class="fab fa-facebook-f fa-lg blue-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!-- Twitter -->
+              <a class="social-media-icon" target="_blank" href="https://twitter.com/agcargentina">
+                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Linkedin -->
+              <a class="social-media-icon" target="_blank" href="https://www.linkedin.com/in/agcargentina/">
+                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Instagram-->
+              <a class="social-media-icon" target="_blank" href="https://www.instagram.com/agc.argentina/">
+                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <a class="social-media-icon" target="_blank" href="https://api.whatsapp.com/send?phone=541160914660">
+                <i class="fab fa-whatsapp fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+              </a>
 
-    <script>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright: AGC Trabajadores Informáticos
+      </div>
+    </footer> 
+    
+  </body>
+  <script>
       $("#periodo_pago").datepicker( {
         format: "mm/yyyy",
         startView: "months", 
@@ -221,6 +258,4 @@
           });
       }));
     </script>
-
-  </body>
 </html>
