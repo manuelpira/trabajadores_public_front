@@ -54,6 +54,7 @@ h2 {
 footer {
   background: #0080eb;
   margin-top: 30px;
+  flex-shrink: 0;
 }
 
 .footer-copyright {
@@ -64,4 +65,15 @@ footer {
 
 .social-media-icon {
   color: white;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
 }
