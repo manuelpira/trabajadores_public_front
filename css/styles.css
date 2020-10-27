@@ -1,3 +1,12 @@
+.card {
+  border: solid 2px #0080eb;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 8px 5px #bbb;
+  cursor: pointer;
+}
+
 thead th {
   background: #0080eb;
   color: white; 
