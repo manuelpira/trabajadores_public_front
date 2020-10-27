@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style type="text/css">
+			 @media print {
+		       * {
+		           color: #000 !important;
+		           -webkit-text-shadow: none !important;
+		           text-shadow: none !important;
+		           font-family: "Times New Roman", Times, serif;
+		           background: transparent !important;
+		           -webkit-box-shadow: none !important;
+		           box-shadow: none !important;
+		           border: none!important;
+		           font-weight: big !important;
+		       }
+
+		       header, nav, footer {
+		       	overflow:visible;
+		       }
+
+		       .body {
+		           width: auto;
+		           border: 0;
+		           margin: 0 5%;
+		           padding: 0;
+		           float: none !important;
+		       }
+
+
+		       a, a:link, a:visited {
+
+		           &[href]:after {
+		               content: " (" attr(href) ") ";
+		               font-size: 90%;
+		           }
+
+		           &[href^="javascript:"],
+		           &[href^="#"] {
+		               &:after {
+		                   content: "";
+		               }
+		           }
+		       }
+
+		       abbr[title]:after {
+		           content: " (" attr(title) ")";
+		       }
+
+		       pre,
+		       blockquote {
+		           border: 1px solid #999;
+		           page-break-inside: avoid;
+		       }
+
+		       thead {
+		           display: table-header-group;
+		       }
+
+		       tr,
+		       img {
+		           page-break-inside: avoid;
+		       }
+
+		       img {
+		           max-width: 100% !important;
+		       }
+
+		       @page {
+		       	   size: a4;
+		           margin: 0.5cm;
+		       }
+
+		       p,
+		       h2,
+		       h3 {
+		           orphans: 3;
+		           widows: 3;
+		       }
+
+		       h2,
+		       h3 {
+		           page-break-after: avoid;
+		       }
+
+		       footer {
+		       		position: fixed;
+		       		bottom: 0;
+		       	}
+		       
+			}
+
+			.lugar-y-fecha {
+		       	text-align: right;
+	       	}
+
+	       	.nota-encabezado {
+	       		font-weight: bold;
+	       		margin-top: 50px;
+	       	}
+
+	       	.nota-contenido {
+	       		text-indent: 3em;
+	       		text-align: justify;
+	       		line-height: 1.5em;
+	       	}
+
+	       	.firma {
+	       		position: relative;
+	       		float: right;
+	       		text-align: center;
+	       		margin-right: 20%;
+	       		margin-top: 1em;
+	       	}	       
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="../img/agc_membrete_header.png">
+		</header>
+		<div class=container>
+			<p class="lugar-y-fecha">
+				Buenos Aires, {{date.day}} de {{date.month}} de {{date.year}}.
+			</p>
+
+			<div class="nota-encabezado">
+				<p>
+					Estimado/a
+				</p>
+				<p>
+					Representante legal / Gerente General / Director/a de {{empresa_razon_social}}
+				</p>
+				<p>
+					S.../...D
+				</p>
+			</div>
+			<div class="nota-contenido">
+				<p>
+					Me comunico por el presente a fin de ponerle en conocimiento que el/la Sr/a {{trabajador.apellido}} {{trabajador.nombres}}, DNI {{trabajador.dni}}, quien presta servicios en vuestra empresa, ha procedido a realizar trámite de afiliación con ésta organización sindical, teniendo correspondiente alta como afiliado el día {{afiliacion.fecha}} y abonado la primer cuota sindical. En consecuencia, y conforme normativa vigente, le solicitamos tenga a bien ordenar la retención en sus haberes mensuales del importe referenciado como “cuota sindical” y depositarlo en la sig. cuenta :………….
+				</p>
+				<p>
+					A los efectos de que proceda con la retención de la cuota sindical, acompañamos al presente copia de la Solicitud de Afiliación del trabajador/a, donde manifiesta su voluntad de que se le efectúe la retención directa en sus haberes.
+				</p>
+				<p>
+					En virtud del marco normativo aplicable, ley 23.551, ley 24.642 y cctes., lo ponemos en conocimiento de su responsabilidad en atender la presente solicitud, y en efecto, retener el porcentaje correspondiente a “cuota sindical” y derivarlo a la Asociación Gremial de Computación.
+				</p>	
+				<p>
+					Sin otro particular, y quedando a su entera disposición, aprovecho la oportunidad para saludarle.
+				</p>		
+				<p>
+					Atte.
+				</p>
+			</div>
+			<div class="firma">
+				<img src="{{firma.imagen}}" style="height: 150px">
+				<p>{{firma.nombre}}</p>
+				<p>{{firma.cargo}}</p>
+			</div>
+		</div>
+		<footer>
+			<img src="../img/agc_membrete_footer.png">
+		</footer>
+	</body>
+</html>
