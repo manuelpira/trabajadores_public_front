@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/templates.css">
+</head>
+<body>
+    <header>
+        <img src="../img/agc_membrete_header.png">
+    </header>
+    <div class=container>
+        <p class="lugar-y-fecha">
+            Buenos Aires, {{date.day}} de {{date.month}} de {{date.year}}.
+        </p>
+
+        <div class="nota-encabezado">
+            <p>
+                Estimado/a
+            </p>
+            <p>
+                Representante legal / Gerente General / Director/a de {{empresa_razon_social}}
+            </p>
+            <p>
+                S.../...D
+            </p>
+        </div>
+        <div class="nota-contenido">
+            <p>
+                Me comunico por el presente a fin de ponerle en conocimiento que el/la Sr/a {{trabajador.apellido}} {{trabajador.nombres}}, DNI {{trabajador.dni}}, quien presta servicios en vuestra empresa, ha procedido a realizar el trámite de afiliación con ésta organización sindical, teniendo correspondiente alta como afiliado el día {{afiliacion.fecha}} y abonado la primer cuota sindical. En consecuencia, y conforme normativa vigente, le solicitamos tenga a bien ordenar la retención del 3% en sus haberes mensuales del importe referenciado como “cuota sindical” para luego depositar e informar su pago en nuestros sistema de empleadores, al cual podrá acceder a través de https://www.agc.org.ar/empleadores. 
+            </p>
+            <p>
+                A los efectos de que proceda con la retención de la cuota sindical, acompañamos al presente copia de la Solicitud de Afiliación del trabajador/a, donde manifiesta su voluntad de que se le efectúe la retención directa en sus haberes.
+            </p>
+            <p>
+                En virtud del marco normativo aplicable, ley 23.551, ley 24.642 y cctes., lo ponemos en conocimiento de su responsabilidad en atender la presente solicitud, y en efecto, retener el porcentaje correspondiente a “cuota sindical” y derivarlo a la Asociación Gremial de Computación.
+            </p>    
+            <p>
+                Sin otro particular, y quedando a su entera disposición, aprovecho la oportunidad para saludarle.
+            </p>        
+            <p>
+                Atte.
+            </p>
+        </div>
+        <div class="firma">
+            <img src="{{firma.imagen}}" style="height: 150px">
+            <p>{{firma.nombre}}</p>
+            <p>{{firma.cargo}}</p>
+        </div>
+    </div>
+    <footer>
+        <img src="../img/agc_membrete_footer.png">
+    </footer>
+</body>
+</html>
