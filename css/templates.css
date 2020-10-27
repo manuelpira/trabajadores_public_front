@@ -1,110 +1,117 @@
  @media print {
-   * {
-       color: #000 !important;
-       -webkit-text-shadow: none !important;
-       text-shadow: none !important;
-       font-family: "Times New Roman", Times, serif;
-       background: transparent !important;
-       -webkit-box-shadow: none !important;
-       box-shadow: none !important;
-       border: none!important;
-       font-weight: big !important;
-   }
+    * {
+        color: #000 !important;
+        -webkit-text-shadow: none !important;
+        text-shadow: none !important;
+        font-family: "Times New Roman", Times, serif;
+        background: transparent !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none!important;
+        font-weight: big !important;
+    }
 
-   header, nav, footer {
-   	overflow:visible;
-   }
+    header, nav, footer {
+        overflow:visible;
+    }
 
-   .body {
-       width: auto;
-       border: 0;
-       margin: 0 5%;
-       padding: 0;
-       float: none !important;
-   }
+    .body {
+        width: auto;
+        border: 0;
+        margin: 0 5%;
+        padding: 0;
+        float: none !important;
+    }
 
 
-   a, a:link, a:visited {
+    a, a:link, a:visited {
 
-       &[href]:after {
-           content: " (" attr(href) ") ";
-           font-size: 90%;
-       }
+        &[href]:after {
+            content: " (" attr(href) ") ";
+            font-size: 90%;
+        }
 
-       &[href^="javascript:"],
-       &[href^="#"] {
-           &:after {
-               content: "";
-           }
-       }
-   }
+        &[href^="javascript:"],
+        &[href^="#"] {
+            &:after {
+                content: "";
+            }
+        }
+    }
 
-   abbr[title]:after {
-       content: " (" attr(title) ")";
-   }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
 
-   pre,
-   blockquote {
-       border: 1px solid #999;
-       page-break-inside: avoid;
-   }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-   thead {
-       display: table-header-group;
-   }
+    thead {
+        display: table-header-group;
+    }
 
-   tr,
-   img {
-       page-break-inside: avoid;
-   }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-   img {
-       max-width: 100% !important;
-   }
+    img {
+        max-width: 100% !important;
+    }
 
-   @page {
-   	   size: a4;
-       margin: 0.5cm;
-   }
+    @page {
+        size: a4;
+        margin: 0.5cm;
+    }
 
-   p,
-   h2,
-   h3 {
-       orphans: 3;
-       widows: 3;
-   }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-   h2,
-   h3 {
-       page-break-after: avoid;
-   }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 
-   footer {
-   		position: fixed;
-   		bottom: 0;
-   	}
-   
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+    
 }
 
 .lugar-y-fecha {
-   	text-align: right;
-	}
+    text-align: right;
+}
 
-	.nota-encabezado {
-		font-weight: bold;
-		margin-top: 50px;
-	}
+.nota-encabezado {
+    font-weight: bold;
+    margin-top: 50px;
+}
 
-	.nota-contenido {
-		text-indent: 3em;
-		text-align: justify;
-		line-height: 1.5em;
-	}
+.nota-contenido {
+    text-indent: 3em;
+    text-align: justify;
+    line-height: 1.5em;
+}
 
-	.firma {
-		position: relative;
-		float: right;
-		text-align: center;
-		margin-right: 20%;
-		margin-top: 1em;
-	}	       
+.firma {
+    position: relative;
+    float: right;
+    text-align: center;
+    margin-right: 20%;
+    margin-top: 1em;
+}         
+
+@media screen {
+    footer,
+    header {
+        display: none;
+    }
+}
