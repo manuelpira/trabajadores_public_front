@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Bootstrap Fileinput CSS --> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
     <!-- AGC CSS --> 
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -21,6 +24,9 @@
     <!-- Include Bootstrap Datepicker -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- the main fileinput plugin file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/js/fileinput.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,9 +133,8 @@
 
                 <div class="form-group required col-lg-4">
                   <label class="control-label" for="archivo_imagen">Comprobante de pago.</label>
-                  <input type="file" class="form-control-file" id="archivo_imagen" required>
+                  <input type="file" class="file form-control" id="archivo_imagen" data-show-preview="false" data-msg-placeholder="Comprobante de Pago..." required>
                   <small id="archivoHelp" class="form-text text-muted">Archivo de imagen o PDF de tu transferencia. Máximo 5mb.</small>
-
                 </div>
               </div>
 
@@ -257,5 +262,12 @@
 
           });
       }));
+
+      $(".file").fileinput({
+        language: 'es',
+        showRemove: false,
+        showUpload: false,
+      });
+
     </script>
 </html>
